@@ -2,11 +2,18 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(113, 39, 182);
+    background-color: rgb(194, 208,135);
 }
 
 li {
     display: inline-block;
     margin: 1rem;
     cursor: pointer;
+    color: rgb(113, 39, 182);
+    font-weight: bold;
+}
+
+h1{
+    color: rgb(113, 39, 182);
 }

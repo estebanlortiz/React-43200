@@ -1,22 +1,24 @@
-import './navbar.css';
+import './NavBar.css'
+import CartWidget from '../CartWidget/CartWidget'
 
-const navbar = () => {
+const NavBar = () => {
   return (
     <header>
-        <h1> By Ramona</h1>
+        <h1> ByR </h1>
+
         <nav>
             <ul>
                 <li>Shampoo</li>
-                <li>Acondicionador</li>
-                <li>Cremas</li>
+                <li>Belleza Capilar</li>
                 <li>Belleza Facial</li>
-
+                <li>Belleza Corporal</li>
             </ul>
-
         </nav>
+
+        <CartWidget />
       
     </header>
   )
 }
 
-export default navbar
+export default NavBar

@@ -1,8 +1,9 @@
-
+import './ItemListContainer.css'
 
 const ItemListContainer = (props) => {
   return (
-    <h2>Colocamos un saludo: {props.greeting}</h2>
+    <h2 className='titulo'> {props.greeting} </h2>
+    
   )
 }
 
