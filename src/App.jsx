@@ -5,7 +5,7 @@ import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import NavBar from './Components/NavBar/NavBar';
 
 function App() {
-  const nombre = "React";
+  
   return (
     <>
       <NavBar />
