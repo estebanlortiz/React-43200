@@ -1,3 +1,4 @@
+
 header {
     display: flex;
     align-items: center;
@@ -19,4 +20,5 @@ li {
 h1{
     color: rgb(113, 39, 182);
     text-decoration: none;
+    margin-left: 2rem;
 }

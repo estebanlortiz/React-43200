@@ -1,7 +1,9 @@
 .imgCarrito {
     width: 4rem;
+
 }
 
 .numero {
     color:  rgb(113, 39, 182);
+    margin-right: 1rem;
 }

@@ -19,3 +19,21 @@
     color: rgb(113, 39, 182);
     text-decoration: none;
 }
+
+.boton{
+    color: rgb(194, 208,135);
+    background-color: rgb(113, 39, 182);
+    border-radius: 1rem;
+    font-weight: bold;
+    border-color: rgb(187, 180, 190) ;
+    width: 7rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+.boton:hover{
+    background-color: rgb(194, 208,135);
+    color: rgb(113, 39, 182);
+}
+
+
