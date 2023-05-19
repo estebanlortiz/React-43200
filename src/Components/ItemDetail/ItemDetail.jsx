@@ -1,16 +1,33 @@
-import './ItemDetail.css'
+import "./ItemDetail.css";
+import { Link } from "react-router-dom";
 
-const ItemDetail = ({id, nombre, precio, img, idCat}) => {
+const ItemDetail = ({ id, nombre, precio, img, idCat, descri }) => {
   return (
-    <div className='contenedorItem'>
-        <h2>{nombre} </h2>
-        <h3> <strong>Precio: </strong>{precio} </h3>
-        <h3> <strong>ID:</strong> {id} </h3>
-        <h3> <strong>Categoria:</strong> {idCat} </h3>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum odit omnis modi consectetur beatae placeat a optio inventore cumque quod aspernatur sequi accusamus hic labore, vitae debitis blanditiis ad quisquam?</p>
-        <img src={img} alt={nombre} />
+    <div className="contenedorItem">
+      <Link to={'/'}>
+        {" "}
+        <button className="boton"> Volver </button>{" "}
+      </Link>
+      <h2>{nombre} </h2>
+      <h3>
+        {" "}
+        <strong>Precio: </strong>
+        {precio}{" "}
+      </h3>
+      <h3>
+        {" "}
+        <strong>ID:</strong> {id}{" "}
+      </h3>
+      <h3>
+        {" "}
+        <strong>Categoria:</strong> {idCat}{" "}
+      </h3>
+      <p>
+      {descri}
+      </p>
+      <img src={img} alt={nombre} />
     </div>
-  )
-}
+  );
+};
 
-export default ItemDetail
+export default ItemDetail;

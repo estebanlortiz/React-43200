@@ -8,6 +8,8 @@
     flex-direction: column;
     align-items: center;
     color: rgb(113, 39, 182);
+    border-color:rgb(113, 39, 182);
+    border: solid 1.5px;
 }
 
 .imgProducto {

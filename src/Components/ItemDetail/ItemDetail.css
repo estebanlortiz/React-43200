@@ -4,9 +4,14 @@
     margin: 3rem;
     color: rgb(113, 39, 182);
     background-color: rgb(194, 208,135);
+    padding-top: 1rem;
 }
 
 img {
     width: 30vw;
     height: 35vw;
+}
+
+p{
+    font-weight: bold;
 }
