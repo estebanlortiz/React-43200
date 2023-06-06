@@ -5,7 +5,7 @@ import { db } from "../../services/config.";
 import { collection, getDocs, where, query } from "firebase/firestore";
 
 const ItemListContainer = () => {
-  const [inventario, setProductos] = useState([]);
+  const [productos, setProductos] = useState([]);
   const { idCategoria } = useParams();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const ItemListContainer = () => {
   return (
     <div>
       <h2 style={{ textAlign: "center" }}> Productos </h2>
-      <ItemList inventario={inventario} />
+      <ItemList inventario={productos} />
     </div>
   );
 };
