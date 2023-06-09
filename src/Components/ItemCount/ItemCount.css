@@ -1,0 +1,22 @@
+.miBtn {
+    background-color: rgb(113, 39, 182);
+    border-radius: 1rem;
+    color: rgb(194, 208, 135);
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    border-color: rgb(187, 180, 190);
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 10px;
+    color:rgb(113, 39, 182);
+}
