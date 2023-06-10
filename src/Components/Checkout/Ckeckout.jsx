@@ -80,6 +80,10 @@ const Checkout = () => {
             <h3>Cantidad total: {cantidadTotal} </h3>
         </div>
 
+        <hr />
+
+        <h3> Para finalizar la compra ingrese sus datos</h3>
+
         <div className="form-group">
           <label htmlFor=""> Nombre </label>
           <input
@@ -117,7 +121,7 @@ const Checkout = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor=""> Email Confirmación </label>
+          <label htmlFor="">Confirmar Email </label>
           <input
             type="email"
             value={emailConfimarcion}
