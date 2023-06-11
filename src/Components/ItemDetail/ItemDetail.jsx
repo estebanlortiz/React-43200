@@ -1,33 +1,23 @@
-import './ItemDetail.css'
-import ItemCount from '../ItemCount/ItemCount'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import "./ItemDetail.css";
+import ItemCount from "../ItemCount/ItemCount";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-//Importamos el CarritoContext: 
-import { CarritoContext } from '../../context/CarritoContext';
-//Importo el Hook useContext: 
-import { useContext } from 'react';
+import { CarritoContext } from "../../context/CarritoContext";
 
+import { useContext } from "react";
 
+const ItemDetail = ({ id, nombre, precio, img, idCat, descri, stock }) => {
+  const [agregarCantidad, setAgregarCantidad] = useState(0);
 
-const ItemDetail = ({ id, nombre, precio, img, idCat, descri, stock}) => {
+  const { agregarProducto } = useContext(CarritoContext);
 
- //1) Creamos un estado con la cantidad de productos agregados: 
- const [agregarCantidad, setAgregarCantidad] = useState(0);
+  const manejadorCantidad = (cantidad) => {
+    setAgregarCantidad(cantidad);
 
- //useContext: 
- const {agregarProducto} = useContext(CarritoContext);
-
- //2) Creamos una función manejadora de la cantidad: 
-
- const manejadorCantidad = (cantidad) => {
-   setAgregarCantidad(cantidad);
-   //console.log("Productos agregados:" + cantidad);
-
-   //Ahora acá creo un objeto con el item y la cantidad: 
-   const item = {id, nombre, precio}; 
-   agregarProducto(item, cantidad);
- }
+    const item = { id, nombre, precio };
+    agregarProducto(item, cantidad);
+  };
 
   return (
     <div className="contenedorItem">
@@ -51,12 +41,19 @@ const ItemDetail = ({ id, nombre, precio, img, idCat, descri, stock}) => {
       </h3>
       <p>{descri}</p>
       <img src={img} alt={nombre} />
-      {
-        //Acá empleamos la lógica del montaje y desmontaje de componentes: 
-      }
-      {
-        agregarCantidad > 0 ? (<Link className='miBtn' to="/cart"> Terminar Compra </Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />)
-      }
+      {}
+      {agregarCantidad > 0 ? (
+        <Link className="miBtn" to="/cart">
+          {" "}
+          Terminar Compra{" "}
+        </Link>
+      ) : (
+        <ItemCount
+          inicial={1}
+          stock={stock}
+          funcionAgregar={manejadorCantidad}
+        />
+      )}
     </div>
   );
 };

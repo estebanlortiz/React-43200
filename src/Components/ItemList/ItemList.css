@@ -1,5 +1,4 @@
 .contenedorProductos {
     display: flex;
     flex-wrap: wrap;
-    height:30rem;
 }

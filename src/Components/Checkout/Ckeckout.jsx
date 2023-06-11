@@ -4,9 +4,9 @@ import { db } from "../../services/config.";
 import { collection, addDoc } from "firebase/firestore";
 import "./Checkout.css";
 
-
 const Checkout = () => {
-  const { carrito, vaciarCarrito,total, cantidadTotal } = useContext(CarritoContext);
+  const { carrito, vaciarCarrito, total, cantidadTotal } =
+    useContext(CarritoContext);
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [telefono, setTelefono] = useState("");
@@ -14,23 +14,26 @@ const Checkout = () => {
   const [emailConfimarcion, setEmailConfirmacion] = useState("");
   const [error, setError] = useState("");
   const [ordenId, setOrdenId] = useState("");
+  const vaciarFormulario = () => {
+    setNombre("");
+    setApellido("");
+    setTelefono("");
+    setEmail("");
+    setEmailConfirmacion("");
+  };
 
   const manejadorSubmit = (event) => {
     event.preventDefault();
 
-    //Validar que los campos esten completos:
     if (!nombre || !apellido || !telefono || !email || !emailConfimarcion) {
       setError("Por favor complete los campos");
       return;
     }
 
-    //Validamos que los campos del email coincidan
     if (email !== emailConfimarcion) {
       setError("Los campos del email no coinciden");
       return;
     }
-
-    //Creamos el objeto de la orden:
 
     const orden = {
       items: carrito.map((producto) => ({
@@ -48,11 +51,11 @@ const Checkout = () => {
       email,
     };
 
-    //Guardamos la orden en la base de datos:
     addDoc(collection(db, "ordenes"), orden)
       .then((docRef) => {
         setOrdenId(docRef.id);
         vaciarCarrito();
+        vaciarFormulario();
       })
       .catch((error) => {
         console.log("Error al crear la orden", error);
@@ -71,13 +74,12 @@ const Checkout = () => {
             </p>
             <p>Precio: $ {producto.item.precio} </p>
             <hr />
-          
           </div>
         ))}
-        
+
         <div>
-            <h3>Total: ${total} </h3>
-            <h3>Cantidad total: {cantidadTotal} </h3>
+          <h3>Total: ${total} </h3>
+          <h3>Cantidad total: {cantidadTotal} </h3>
         </div>
 
         <hr />
@@ -129,7 +131,7 @@ const Checkout = () => {
           />
         </div>
 
-        {error && <p style={{ color: "red" }}> {error} </p>}
+        {error && <p style={{ color: "rgb(113, 39, 182)" }}> {error} </p>}
 
         <button className="miBtn" type="submit">
           {" "}
