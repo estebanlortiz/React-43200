@@ -43,10 +43,16 @@ const ItemDetail = ({ id, nombre, precio, img, idCat, descri, stock }) => {
       <img src={img} alt={nombre} />
       {}
       {agregarCantidad > 0 ? (
+        <div>
         <Link className="miBtn" to="/cart">
           {" "}
           Terminar Compra{" "}
         </Link>
+        <Link className="miBtn" to="/">
+        {" "}
+        Seguir Comprando{" "}
+      </Link>
+      </div>
       ) : (
         <ItemCount
           inicial={1}
