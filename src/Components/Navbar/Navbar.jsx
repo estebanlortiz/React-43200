@@ -2,6 +2,7 @@ import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
 import { NavLink, Link } from "react-router-dom";
 
+//aca es donde vamos a ver si podemos engañar a la app para que suba bien 
 const NavBar = () => {
   return (
     <header>
